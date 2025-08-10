@@ -29,13 +29,13 @@ You can look for examples of where you may use optional chaining in your project
 ## Description
 
 This proposal introduces the following syntax:
-| **New syntax** | **Equivalent ES2023** |
+| **New syntax** | **Equivalent ES2025** |
 |:--:|:--:|
-| `expr1?.prop = val`   | `expr1 == null ? undefined : expr1.prop = val`   |
-| `expr1?.prop += val`  | `expr1 == null ? undefined : expr1.prop += val`  |
-| `expr1?.prop ??= val` | `expr1 == null ? undefined : expr1.prop ??= val` |
-| `expr1?.[key] = val`  | `expr1 == null ? undefined : expr1[key] = val`   |
-| `expr1?.foo().prop[key] = val`  | `expr1 == null ? undefined : expr1.foo().prop[key] = val`   |
+| `expr1?.prop = val`   | `expr1 == null \|\| expr1 == undefined ? undefined : expr1.prop = val`   |
+| `expr1?.prop += val`  | `expr1 == null \|\| expr1 == undefined ? undefined : expr1.prop += val`  |
+| `expr1?.prop ??= val` | `expr1 == null \|\| expr1 == undefined ? undefined : expr1.prop ??= val` |
+| `expr1?.[key] = val`  | `expr1 == null \|\| expr1 == undefined ? undefined : expr1[key] = val`   |
+| `expr1?.foo().prop[key] = val`  | `expr1 == null \|\| expr1 == undefined ? undefined : expr1.foo().prop[key] = val`   |
 
 ## Implementations
 
